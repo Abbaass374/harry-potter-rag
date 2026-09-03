@@ -1,0 +1,8 @@
+# --- Chat UI ---
+streamlit>=1.33
+
+# --- HTTP client for talking to the FastAPI backend ---
+requests>=2.31
+
+# --- Config ---
+python-dotenv>=1.0

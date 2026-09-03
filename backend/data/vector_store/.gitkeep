@@ -1,0 +1,2 @@
+# The vector store is built by the notebook / `python -m app.services.ingest --force`.
+# Its contents are git-ignored (they contain the full book text + are large).

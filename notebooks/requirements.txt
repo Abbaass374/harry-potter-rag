@@ -1,0 +1,18 @@
+# Extra dependencies used only by the data-prep / evaluation notebook.
+# (The backend's requirements.txt covers qdrant-client, sentence-transformers,
+#  ollama, etc. — install both when running the notebook.)
+
+# --- PDF -> Markdown parsing ---
+pymupdf4llm>=0.0.17      # preferred: layout-aware PDF -> Markdown
+pypdf>=4.2               # fallback parser + page-level extraction
+
+# --- Notebook runtime ---
+jupyter>=1.0
+notebook>=7.1
+ipykernel>=6.29
+nbconvert>=7.16
+
+# --- Data wrangling / tables / progress ---
+pandas>=2.2
+tqdm>=4.66
+tabulate>=0.9          # pandas .to_markdown() for the evaluation table

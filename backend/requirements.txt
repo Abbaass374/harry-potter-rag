@@ -1,0 +1,21 @@
+# --- Web framework ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+
+# --- Vector DB (embedded/local mode, no Docker needed) ---
+qdrant-client>=1.9
+
+# --- Embeddings (local, free) ---
+sentence-transformers>=2.7
+
+# --- LLM client (Groq hosted API) ---
+groq>=0.11
+
+# --- Config & validation ---
+pydantic>=2.6
+pydantic-settings>=2.2
+python-dotenv>=1.0
+
+# --- HTTP + testing ---
+httpx>=0.27
+pytest>=8.0

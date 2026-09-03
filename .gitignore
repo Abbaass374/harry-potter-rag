@@ -1,0 +1,31 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Environment / secrets ---
+.env
+*.log
+
+# --- Data: don't redistribute the source books, don't commit large artifacts ---
+data/raw/*.pdf
+data/processed/*.md
+data/processed/*.csv
+
+# The persisted Qdrant vector store is EXCLUDED: its chunk payloads contain the
+# full book text (copyright) and it is large. It is reproducible from the
+# notebook / `python -m app.services.ingest --force`. (Keep the folder itself.)
+backend/data/vector_store/*
+!backend/data/vector_store/.gitkeep
+
+# --- OS / editor ---
+.DS_Store
+.vscode/
+.idea/
