@@ -1,0 +1,21 @@
+{
+  "collection_name": "harry_potter",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "vector_size": 384,
+  "distance": "COSINE",
+  "chunk_size_tokens": 220,
+  "chunk_overlap_tokens": 32,
+  "chars_per_token": 4,
+  "num_chunks": 10142,
+  "books_detected": [
+    "Harry Potter and the Chamber of Secrets",
+    "Harry Potter and the Deathly Hallows",
+    "Harry Potter and the Goblet of Fire",
+    "Harry Potter and the Half-Blood Prince",
+    "Harry Potter and the Order of the Phoenix",
+    "Harry Potter and the Prisoner of Azkaban",
+    "Harry Potter and the Sorcerer's Stone"
+  ],
+  "source_pdf": "/Users/abbas/Desktop/harry-potter-rag/data/raw/harry_potter_complete.pdf",
+  "created_at": "2026-09-03T13:13:28.677379+00:00"
+}

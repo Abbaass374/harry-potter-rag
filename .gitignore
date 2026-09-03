@@ -19,11 +19,13 @@ data/raw/*.pdf
 data/processed/*.md
 data/processed/*.csv
 
-# The persisted Qdrant vector store is EXCLUDED: its chunk payloads contain the
-# full book text (copyright) and it is large. It is reproducible from the
-# notebook / `python -m app.services.ingest --force`. (Keep the folder itself.)
-backend/data/vector_store/*
-!backend/data/vector_store/.gitkeep
+# The Qdrant vector store IS committed so the Streamlit Cloud app can load it.
+# NOTE: its chunk payloads contain the book text, so the repo must stay PRIVATE.
+# Only the runtime lock file is ignored.
+backend/data/vector_store/.lock
+
+# Streamlit secrets (never commit real secrets)
+.streamlit/secrets.toml
 
 # --- OS / editor ---
 .DS_Store

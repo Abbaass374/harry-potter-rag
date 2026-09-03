@@ -320,6 +320,30 @@ _Add screenshots here:_
 
 ---
 
+## Deploy to Streamlit Community Cloud
+
+The `frontend/app.py` UI talks to the FastAPI backend over HTTP, so it can't run
+alone in the cloud. For a hosted demo there's a **self-contained** entry point,
+`streamlit_app.py`, that runs the whole pipeline (retrieve → grounding gate →
+Groq) in one process, reusing the same `backend/app/services`.
+
+1. **Keep the repo PRIVATE** — the committed vector store contains the book text.
+2. Push the repo (including `backend/data/vector_store/`).
+3. On <https://share.streamlit.io> → **New app** → pick this repo/branch.
+   - **Main file path:** `streamlit_app.py`
+   - **Advanced → Python version:** 3.12
+4. **Settings → Secrets:**
+   ```toml
+   GROQ_API_KEY = "gsk_your_key_here"
+   GROQ_MODEL = "openai/gpt-oss-20b"
+   ```
+5. **Deploy.** First load takes ~30–60s (it loads the embedding model). If the app
+   hits the free tier's memory limit, switch the query embedder to the
+   torch-free `fastembed` (same MiniLM weights).
+
+Run it locally the same way: `streamlit run streamlit_app.py` (reads the key from
+`backend/.env` or `.streamlit/secrets.toml`).
+
 ## Notes & Design Decisions
 
 - **Chunk size is tuned to the embedding model, not a generic rule.**

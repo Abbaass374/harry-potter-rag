@@ -1,0 +1,9 @@
+# Dependencies for the deployed Streamlit Cloud app (streamlit_app.py).
+# Streamlit Community Cloud installs from this root requirements.txt.
+streamlit>=1.33
+groq>=0.11
+qdrant-client>=1.9
+sentence-transformers>=2.7   # pulls torch (CPU) — used to embed the query
+pydantic>=2.6
+pydantic-settings>=2.2
+python-dotenv>=1.0
