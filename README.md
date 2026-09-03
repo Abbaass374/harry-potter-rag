@@ -1,4 +1,4 @@
-# 🧙 Harry Potter RAG Chatbot
+#  Harry Potter RAG Chatbot
 
 A Retrieval-Augmented Generation (RAG) chatbot that answers natural-language
 questions about the **seven Harry Potter books**, grounded strictly in the book
